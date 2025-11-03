@@ -9,7 +9,12 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
-/** Tarjan's SCC: single DFS pass with lowlink + stack. */
+/**
+ * Tarjan's algorithm for strongly connected components (SCC) in a directed
+ * graph.
+ * Usage: new TarjanSCC().compute(graph, metrics) -> components + compId map.
+ */
+
 public class TarjanSCC {
 
     public static final class Result {

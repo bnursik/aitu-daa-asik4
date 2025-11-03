@@ -10,9 +10,10 @@ import java.util.Deque;
 import java.util.List;
 
 /**
- * Kahn's algorithm (BFS over in-degrees). Returns empty list if a cycle is
- * detected.
+ * Kahn's algorithm for topological sorting (BFS over in-degrees). Returns a
+ * valid order or empty if cyclic.
  */
+
 public final class KahnTopoSort {
 
     public List<Integer> order(Graph dag, Metrics m) {

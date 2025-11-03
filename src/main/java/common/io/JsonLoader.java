@@ -7,6 +7,9 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Loads the assignment's graph JSON format.
+ */
 public final class JsonLoader {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
@@ -17,7 +20,7 @@ public final class JsonLoader {
         try {
             Dataset ds = MAPPER.readValue(path.toFile(), Dataset.class);
             boolean directed = ds.directed == null || ds.directed; // default true
-            Graph g = new Graph(ds.n, directed);
+            Graph g = new Graph(ds.n, directed, ds.source);
             if (ds.edges != null) {
                 for (DEdge e : ds.edges) {
                     g.addEdge(e.u, e.v, e.w);
